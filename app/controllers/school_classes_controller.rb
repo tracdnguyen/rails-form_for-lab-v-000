@@ -1,15 +1,24 @@
 class SchoolClassesController < ApplicationController
   def new
+<<<<<<< HEAD
     @school_class = SchoolClass.new
   end
 
   def create
     @school_class = SchoolClass.new(school_class_params(:title, :room_number))
+=======
+    @school_class = School_class.new
+  end
+
+  def create
+    @school_class = School_class.new(school_class_params(:title, :room_number))
+>>>>>>> 3cd70c33415891b98556c9a7235cb3e75c08435b
     @school_class.save
     redirect_to school_class_path(@school_class)
   end
 
   def show
+<<<<<<< HEAD
     @school_class = SchoolClass.find(params[:id])
   end
 
@@ -19,6 +28,17 @@ class SchoolClassesController < ApplicationController
 
   def update
     @school_class = SchoolClass.find(params[:id])
+=======
+    @school_class = School_class.find(params[:id])
+  end
+
+  def edit
+	  @school_class = School_class.find(params[:id])
+  end
+
+  def update
+    @school_class = School_class.find(params[:id])
+>>>>>>> 3cd70c33415891b98556c9a7235cb3e75c08435b
     @school_class.update(school_class_params(:title, :room_number))
     redirect_to school_class_path(@school_class)
   end
